@@ -7,7 +7,8 @@ class VGG(nn.Module):
     ''' Implementation of VGG Network to distill the output '''
 
     def __init__(self,params):
-        super(VGG,self).__init__():
+        
+        super(VGG, self).__init__()
         ''' Feature Extraction Layers 
             Each convolution layer has arguments : (input_channels, output_channels, kernel_size, stride, padding)
         '''
@@ -85,6 +86,8 @@ def accuracy(outputs, targets):
     outputs = np.argmax(output, axis = 1)
     return np.sum(outputs == targets)/float(targets.size)
 
+# metrics for evaluation can be calculated 
+metrics = {'accuracy':accuracy,}
 
 
 
